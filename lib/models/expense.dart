@@ -9,8 +9,8 @@ enum Category {
   work,
 }
 
-class expense {
- expense({
+class Expense {
+ Expense({
     required this.title,
     required this.amount,
     required this.date,
@@ -21,5 +21,5 @@ class expense {
  final double amount;
  final DateTime date;
  final String id;
- final String category;
+ final Category category;
 }
