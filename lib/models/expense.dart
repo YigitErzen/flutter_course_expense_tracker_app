@@ -34,6 +34,7 @@ class Expense {
  final Category category;
 
   String get formattedDate {
-    return formatter.format(date);
+    return formatter.format(date) 
+    ;
   }
 }
