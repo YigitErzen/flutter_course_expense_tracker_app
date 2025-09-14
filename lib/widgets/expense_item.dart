@@ -23,10 +23,10 @@
                   Text('\$${expense.amount.toStringAsFixed(2)}'),
                    Row(
                     children: [
-                      const Icon(Icons.alarm),
+                      Icon(categoryIcons[expense.category]),
                       const SizedBox(width: 8),
                       Text(
-                        expense.date.toString(),
+                        expense.formattedDate,
                       ),
                     ],
                    )
