@@ -36,6 +36,17 @@ class _NewExpenseState extends State<NewExpense> {
       _selectedDate = pickedDate;
     });
   }
+  void _submitExpenseData(){
+    final enteredAmount = double.tryParse(_amountController.text);
+    final amountIsInvalid  = enteredAmount == null || enteredAmount <= 0 ;
+    if (_titleController.text.trim().isEmpty ||
+        amountIsInvalid ||
+        _selectedDate == null) {
+      // Show error message
+  }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -99,10 +110,7 @@ class _NewExpenseState extends State<NewExpense> {
             child: const Text('Cancel'),
             ),
             ElevatedButton(
-              onPressed: () {
-                print(_titleController.text);
-                print(_amountController.text);
-              },
+              onPressed: _submitExpenseData,
               child: const Text('Save Expense'),
             )
           ],)
