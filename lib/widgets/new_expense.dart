@@ -102,7 +102,9 @@ class _NewExpenseState extends State<NewExpense> {
           ),
           const SizedBox(height: 16,),
           Row(children: [
-            DropdownButton(items: Category.values.map((category) => DropdownMenuItem(
+            DropdownButton(
+              value: _selectedCategory,
+              items: Category.values.map((category) => DropdownMenuItem(
               value: category,
               child: Text(category.name.toUpperCase()),
             )).toList(),
